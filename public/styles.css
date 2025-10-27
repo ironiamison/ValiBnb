@@ -375,6 +375,16 @@ section {
     overflow: hidden;
 }
 
+.feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 .feature-card::before {
     content: '';
     position: absolute;

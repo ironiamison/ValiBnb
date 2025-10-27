@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ValiBNB - Payment Verification for Binance Smart Chain</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">✓</span>
+                <span class="logo-text">ValiBNB</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#api">API</a>
+                <a href="#demo">Demo</a>
+                <a href="https://github.com" target="_blank" class="btn-secondary">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">ValiBNB</span><br>
+                    Payment Verification for Binance Smart Chain
+                </h1>
+                <p class="hero-subtitle">
+                    Community-driven payment verification for Binance Smart Chain. Fast, reliable, and free forever.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#demo" class="btn-primary">Try it Now</a>
+                    <a href="#api" class="btn-outline">View API Docs</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value">99.9%</div>
+                        <div class="stat-label">Uptime</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">&lt;1s</div>
+                        <div class="stat-label">Response Time</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">∞</div>
+                        <div class="stat-label">Free</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="blockchain-visual">
+                    <div class="block"></div>
+                    <div class="block"></div>
+                    <div class="block"></div>
+                    <div class="block active"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why ValiBNB?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure & Reliable</h3>
+                    <p>Built with enterprise-grade security. Verify transactions with confidence knowing all payments are cryptographically validated.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Sub-second verification times. Get instant payment confirmation on the Binance Smart Chain network.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Network Agnostic</h3>
+                    <p>Works on both BSC mainnet and testnet. Switch networks seamlessly for development and production.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Developer Friendly</h3>
+                    <p>Simple REST API with comprehensive documentation. Integrate payment verification in minutes, not hours.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Real-time Monitoring</h3>
+                    <p>Track confirmations, verify amounts, and monitor transaction status in real-time across the BSC network.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Free Forever</h3>
+                    <p>Community-driven and open-source. No fees, no hidden costs. Built for the BNB ecosystem by the community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Section -->
+    <section id="api" class="api-section">
+        <div class="container">
+            <h2 class="section-title">API Endpoints</h2>
+            <div class="endpoint-cards">
+                <div class="endpoint-card">
+                    <div class="endpoint-header">
+                        <span class="method get">GET</span>
+                        <span class="endpoint-path">/health</span>
+                    </div>
+                    <p class="endpoint-desc">Health check endpoint</p>
+                    <div class="code-block">
+<pre>curl https://api.bnbx402.com/health</pre>
+                    </div>
+                </div>
+
+                <div class="endpoint-card">
+                    <div class="endpoint-header">
+                        <span class="method get">GET</span>
+                        <span class="endpoint-path">/supported</span>
+                    </div>
+                    <p class="endpoint-desc">List supported payment kinds</p>
+                    <div class="code-block">
+<pre>curl https://api.bnbx402.com/supported</pre>
+                    </div>
+                </div>
+
+                <div class="endpoint-card">
+                    <div class="endpoint-header">
+                        <span class="method post">POST</span>
+                        <span class="endpoint-path">/verify</span>
+                    </div>
+                    <p class="endpoint-desc">Verify a payment transaction</p>
+                    <div class="code-block">
+<pre>curl -X POST https://api.bnbx402.com/verify \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "transactionHash": "0x...",
+    "fromAddress": "0x...",
+    "toAddress": "0x...",
+    "expectedAmount": "0.1"
+  }'</pre>
+                    </div>
+                </div>
+
+                <div class="endpoint-card">
+                    <div class="endpoint-header">
+                        <span class="method post">POST</span>
+                        <span class="endpoint-path">/settle</span>
+                    </div>
+                    <p class="endpoint-desc">Settle a payment</p>
+                    <div class="code-block">
+<pre>curl -X POST https://api.bnbx402.com/settle \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "transactionHash": "0x...",
+    "recipientAddress": "0x...",
+    "amount": "0.1"
+  }'</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Try it Live</h2>
+            <div class="demo-card">
+                <div class="demo-tabs">
+                    <button class="tab-btn active" data-tab="verify">Verify Payment</button>
+                    <button class="tab-btn" data-tab="health">Health Check</button>
+                    <button class="tab-btn" data-tab="supported">Supported Types</button>
+                </div>
+
+                <div class="demo-content">
+                    <!-- Verify Tab -->
+                    <div id="verify-tab" class="tab-content active">
+                        <div class="form-group">
+                            <label>Transaction Hash</label>
+                            <input type="text" id="txHash" placeholder="0x..." class="input-field">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>From Address</label>
+                                <input type="text" id="fromAddress" placeholder="0x..." class="input-field">
+                            </div>
+                            <div class="form-group">
+                                <label>To Address</label>
+                                <input type="text" id="toAddress" placeholder="0x..." class="input-field">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Expected Amount (BNB)</label>
+                            <input type="text" id="expectedAmount" placeholder="0.1" class="input-field">
+                        </div>
+                        <button onclick="verifyPayment()" class="btn-primary">Verify Transaction</button>
+                    </div>
+
+                    <!-- Health Tab -->
+                    <div id="health-tab" class="tab-content">
+                        <p>Check the health status of the BNB X402 Validator service.</p>
+                        <button onclick="checkHealth()" class="btn-primary">Check Health</button>
+                    </div>
+
+                    <!-- Supported Tab -->
+                    <div id="supported-tab" class="tab-content">
+                        <p>View the supported payment kinds and schemes.</p>
+                        <button onclick="checkSupported()" class="btn-primary">Get Supported Types</button>
+                    </div>
+
+                    <!-- Result -->
+                    <div id="result" class="result-box hidden">
+                        <h3>Response:</h3>
+                        <pre id="result-content"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="logo">
+                        <span class="logo-icon">✓</span>
+                        <span class="logo-text">ValiBNB</span>
+                    </div>
+                    <p>Community-driven payment verification for Binance Smart Chain</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#api">API Documentation</a>
+                    <a href="https://github.com">GitHub</a>
+                    <a href="https://www.binance.com">Binance Smart Chain</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="https://github.com/issues">Report Issue</a>
+                    <a href="mailto:support@example.com">Contact</a>
+                    <a href="https://bscscan.com/address/0x4588B51Db8f8530908b79e51237c4dC4D7a8e860" target="_blank">💛 Donate BNB</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ValiBNB. Open source and free forever.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

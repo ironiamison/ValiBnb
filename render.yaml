@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: validnb
+    env: node
+    buildCommand: echo "No build needed"
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NETWORK
+        value: mainnet
+      - key: BSC_RPC_URL
+        value: https://bsc-dataseed1.binance.org
+      - key: PORT
+        value: 3000
+

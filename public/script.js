@@ -108,6 +108,7 @@ async function verifyPayment() {
     const fromAddress = document.getElementById('fromAddress').value.trim();
     const toAddress = document.getElementById('toAddress').value.trim();
     const expectedAmount = document.getElementById('expectedAmount').value.trim();
+    const contractAddress = document.getElementById('contractAddress').value.trim();
     
     // Validation with enhanced feedback
     if (!txHash || !fromAddress || !toAddress || !expectedAmount) {
@@ -132,7 +133,8 @@ async function verifyPayment() {
                 fromAddress: fromAddress,
                 toAddress: toAddress,
                 expectedAmount: expectedAmount,
-                currency: 'BNB'
+                currency: contractAddress ? 'purge' : 'BNB',
+                contractAddress: contractAddress || undefined
             })
         });
         
